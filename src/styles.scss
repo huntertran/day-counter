@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+
+body
+{
+    margin: 0;
+}
+
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+
+    &.flex-vertical-start
+    {
+        align-items: flex-start;
+    }
+
+    &.flex-vertical-center
+    {
+        align-items: center;
+    }
+
+    &.flex-vertical-end
+    {
+        align-items: flex-end;
+    }
+
+    &.flex-horizontal-start
+    {
+        justify-content: flex-start;
+    }
+
+    &.flex-horizontal-center
+    {
+        justify-content: center;
+    }
+
+    &.flex-horizontal-end
+    {
+        justify-content: flex-end;
+    }
+}
+
+.flex-column
+{
+    display: flex;
+    flex-direction: column;
+
+    &.flex-vertical-start
+    {
+        justify-content: flex-start;
+    }
+
+    &.flex-vertical-center
+    {
+        justify-content: center;
+    }
+
+    &.flex-vertical-end
+    {
+        justify-content: flex-end;
+    }
+
+    &.flex-horizontal-start
+    {
+        align-items: flex-start;
+    }
+
+    &.flex-horizontal-center
+    {
+        align-items: center;
+    }
+
+    &.flex-horizontal-end
+    {
+        align-items: flex-end;
+    }
+}
