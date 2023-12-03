@@ -3,21 +3,35 @@
 .category-card
 {
     border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     font-size: 14px;
     padding: 16px;
-    width: 20vw;
-    box-sizing: border-box;
+    width: 44vw;
 }
 
-@media screen and (max-width: 1200px) {
-    .category-card
+.story-table-row-header
+{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #f0f0f0;
+}
+
+.story-table-row-header-item
+{
+    flex-grow: 1;
+    border-right: 1px solid #f0f0f0;
+    padding: 4px;
+
+    &:last-child
     {
-        width: 28vw;
+        border: none;
     }
 }
 
 // Tablet
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200) {
     .category-card
     {
         width: 44vw;
@@ -25,7 +39,7 @@
 }
 
 // Mobile
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
     .category-card
     {
         width: 92vw;
