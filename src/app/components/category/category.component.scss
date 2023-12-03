@@ -8,3 +8,26 @@
     width: 20vw;
     box-sizing: border-box;
 }
+
+@media screen and (max-width: 1200px) {
+    .category-card
+    {
+        width: 28vw;
+    }
+}
+
+// Tablet
+@media screen and (max-width: 900px) {
+    .category-card
+    {
+        width: 44vw;
+    }
+}
+
+// Mobile
+@media screen and (max-width: 600px){
+    .category-card
+    {
+        width: 92vw;
+    }
+}
