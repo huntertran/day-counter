@@ -62,4 +62,8 @@ export class StoryService {
     category.Stories.push(story);
     category.Stories.sort(this.compare);
   }
+
+  public read(category: Category, storyID: string): Story | undefined {
+    return category.Stories.find((story) => story.Id == storyID);
+  }
 }
