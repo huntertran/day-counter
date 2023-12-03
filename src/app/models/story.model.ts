@@ -1,6 +1,12 @@
 interface Story {
+    Id: string;
     Title: string;
     Description: string;
-    StartDay: Date;
-    EndDate: Date;
+    StartDay: Date | undefined;
+    EndDay: Date | undefined;
+}
+
+enum CountType {
+    CountUp,
+    CountDown
 }
