@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { StorageService } from '../../services/storage.service';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-new-category',
@@ -23,11 +24,19 @@ import { StorageService } from '../../services/storage.service';
 })
 export class NewCategoryComponent {
   public value: string = '';
+  public isCategoryNameDuplicated: boolean = false;
   constructor(
-    public dialogRef: MatDialogRef<NewCategoryComponent>
+    public dialogRef: MatDialogRef<NewCategoryComponent>,
+    private categoryService: CategoryService
   ) { }
 
   public addCategory(name: string): void {
-
+    let addCategorySucceed: boolean = this.categoryService.create('test', name);
+    if (addCategorySucceed) {
+      this.isCategoryNameDuplicated = false;
+      this.dialogRef.close();
+    } else {
+      this.isCategoryNameDuplicated = true;
+    }
   }
 }

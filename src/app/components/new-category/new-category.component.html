@@ -16,6 +16,9 @@
         </button>
         }
     </mat-form-field>
+    @if (isCategoryNameDuplicated) {
+    <p class="error-text">Category name is duplicated</p>
+    }
 </div>
 <div mat-dialog-actions
      align="end">
@@ -24,7 +27,7 @@
             mat-dialog-close>Cancel</button>
     <button mat-raised-button
             color="primary"
-            mat-dialog-close
             [disabled]="!value"
+            (click)="addCategory(value)"
             cdkFocusInitial>Add</button>
 </div>

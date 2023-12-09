@@ -1,4 +1,4 @@
-interface Story {
+export interface Story {
     Id: string;
     Title: string;
     Description: string;
@@ -6,7 +6,7 @@ interface Story {
     EndDay: Date | undefined;
 }
 
-enum CountType {
+export enum CountType {
     CountUp,
     CountDown
 }
