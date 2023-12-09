@@ -14,4 +14,21 @@
     <app-category></app-category>
     <app-category></app-category>
   </div>
+  <div class="add">
+    <button mat-fab
+            [matMenuTriggerFor]="menu">
+      <mat-icon>add</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+              (click)="addCategory()">
+        <mat-icon>folder_open</mat-icon>
+        <span>Category</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>event_available</mat-icon>
+        <span>Activity</span>
+      </button>
+    </mat-menu>
+  </div>
 </div>
