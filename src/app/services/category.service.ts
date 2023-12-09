@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from './storage.service';
-import { Main } from '../models/main.model';
 import { Category } from '../models/category.model';
+import { Main } from '../models/main.model';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'

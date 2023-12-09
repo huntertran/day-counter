@@ -1,17 +1,14 @@
-import { NewCategoryComponent } from './components/new-category/new-category.component';
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { CategoryComponent } from './components/category/category.component';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import {
-  MatDialog,
-  MatDialogRef
-} from '@angular/material/dialog';
-import { StorageService } from './services/storage.service';
+import { RouterOutlet } from '@angular/router';
+import { CategoryComponent } from './components/category/category.component';
+import { NewCategoryComponent } from './components/new-category/new-category.component';
 import { Main } from './models/main.model';
+import { StorageService } from './services/storage.service';
 
 @Component({
   selector: 'app-root',

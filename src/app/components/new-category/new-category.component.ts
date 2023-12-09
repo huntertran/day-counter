@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import {
-  MatDialog,
-  MatDialogRef,
   MatDialogActions,
   MatDialogClose,
-  MatDialogTitle,
   MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle
 } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { StorageService } from '../../services/storage.service';
+import { MatInputModule } from '@angular/material/input';
 import { CategoryService } from '../../services/category.service';
 
 @Component({
