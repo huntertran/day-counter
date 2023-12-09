@@ -2,17 +2,11 @@
   <h1>Welcome to day counter</h1>
 
   <div class="categories-container">
+    @for (category of main.Categories; track category.Title) {
     <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
+    } @empty {
+    <p> There are no items. </p>
+    }
   </div>
   <div class="add">
     <button mat-fab

@@ -1,5 +1,5 @@
 import { NewCategoryComponent } from './components/new-category/new-category.component';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CategoryComponent } from './components/category/category.component';
@@ -10,6 +10,8 @@ import {
   MatDialog,
   MatDialogRef
 } from '@angular/material/dialog';
+import { StorageService } from './services/storage.service';
+import { Main } from './models/main.model';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +20,24 @@ import {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  constructor(public dialog: MatDialog) { }
+export class AppComponent implements OnInit {
+  public main: Main = {
+    User: '',
+    Categories: []
+  };
+
+  constructor(
+    public dialog: MatDialog,
+    private storageService: StorageService
+  ) { }
+  ngOnInit(): void {
+    this.main = this.storageService.read('test');
+  }
+
   public addCategory(): void {
-    this.dialog.open(NewCategoryComponent);
+    this.dialog.open(NewCategoryComponent)
+      .afterClosed().subscribe(() =>
+        this.main = this.storageService.read('test')
+      );
   }
 }
