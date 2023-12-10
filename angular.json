@@ -37,6 +37,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/day-counter/",
               "budgets": [
                 {
                   "type": "initial",
