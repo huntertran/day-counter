@@ -1,6 +1,10 @@
 <div class="category-card">
-    <div class="flex-row">
-        <button>Share Button</button>
+    <div class="card-header">
+        <h1>{{ category.Title }}</h1>
+        <button class="share-button" mat-raised-button extended color="primary">
+            <mat-icon>ios_share</mat-icon>
+            Share
+        </button>
     </div>
 
     <div class="story-table-row-header">
@@ -9,11 +13,11 @@
         <p class="story-table-row-header-item">Days</p>
     </div>
 
-    @for (story of stories; track story.Id)
+    @for (story of category.Stories; track story.Id)
     {
         <app-story></app-story>
     }
 
-    <button style="align-self: flex-end;">+</button>
+    <button class="add-story-button" mat-raised-button color="primary">Add Story</button>
 
 </div>

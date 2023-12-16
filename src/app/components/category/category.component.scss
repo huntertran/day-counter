@@ -9,6 +9,18 @@
     font-size: 14px;
     padding: 16px;
     width: 44vw;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)
+}
+
+.card-header
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
 }
 
 .story-table-row-header
@@ -28,6 +40,17 @@
     {
         border: none;
     }
+}
+
+.share-button
+{
+    position: absolute!important;
+    right: 0;
+}
+
+.add-story-button
+{
+    align-self: flex-end;
 }
 
 // Tablet
