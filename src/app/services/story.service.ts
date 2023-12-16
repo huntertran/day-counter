@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Story, CountType } from '../models/story.model';
+import { Category } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root'

@@ -9,5 +9,11 @@
         <p class="story-table-row-header-item">Days</p>
     </div>
 
-    <app-story></app-story>
+    @for (story of stories; track story.Id)
+    {
+        <app-story></app-story>
+    }
+
+    <button style="align-self: flex-end;">+</button>
+
 </div>
