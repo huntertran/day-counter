@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StoryComponent } from '../story/story.component';
+import { Story } from '../../models/story.model';
 
 @Component({
   selector: 'app-category',
@@ -9,5 +10,5 @@ import { StoryComponent } from '../story/story.component';
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent {
-
+  public stories: Story[] = [];
 }
