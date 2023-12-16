@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hunter-day-counter": {
+      "hosting": {
+        "day-counter": [
+          "hunter-day-counter"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hunter-day-counter"
+  }
+}

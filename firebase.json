@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "day-counter",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

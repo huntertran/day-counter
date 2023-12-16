@@ -98,6 +98,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "day-counter:build:production",
+              "serveTarget": "day-counter:serve:production"
+            },
+            "development": {
+              "buildTarget": "day-counter:build:development",
+              "serveTarget": "day-counter:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
