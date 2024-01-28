@@ -6,12 +6,8 @@
             "name": "Debug on Edge",
             "type": "msedge",
             "request": "launch",
-            "preLaunchTask": "npm: start",
             "url": "http://localhost:4200/",
-            "resolveSourceMapLocations": [
-                "${workspaceFolder}/**",
-                "!**/node_modules/**"
-            ],
+            "sourceMaps": true,
         },
         {
             "name": "Test on Edge",

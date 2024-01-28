@@ -1,5 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { Auth, signInWithPopup, GoogleAuthProvider, getAuth } from '@angular/fire/auth';
+import {
+    Auth,
+    signInWithPopup,
+    GoogleAuthProvider,
+    GithubAuthProvider,
+    getAuth,
+    User,
+    AuthProvider
+} from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -10,6 +18,7 @@ import {
 } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-user-settings',
@@ -20,28 +29,21 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class UserSettingsComponent {
     private auth: Auth = inject(Auth);
+    private userService: UserService = inject(UserService);
 
-    public loginWithGoogle(): void {
+    public async loginWithGoogle(): Promise<void> {
         const provider = new GoogleAuthProvider();
+        let user = await this.getLoggedInUser(provider);
+    }
+
+    public loginWithGithub(): void {
+        const provider = new GithubAuthProvider();
+        this.getLoggedInUser(provider);
+    }
+
+    private async getLoggedInUser(provider: AuthProvider): Promise<User> {
         const auth = getAuth();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential?.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+        let result = await signInWithPopup(auth, provider);
+        return result.user;
     }
 }

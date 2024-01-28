@@ -11,6 +11,8 @@ import { NewCategoryComponent } from './components/new-category/new-category.com
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { Main } from './models/main.model';
 import { StorageService } from './services/storage.service';
+import { UserService } from './services/user.service';
+import { LocalUser } from './models/user.model';
 
 @Component({
     selector: 'app-root',
@@ -27,11 +29,14 @@ export class AppComponent implements OnInit {
 
     constructor(
         public dialog: MatDialog,
+        public userService: UserService,
         private storageService: StorageService
     ) { }
     ngOnInit(): void {
         this.main = this.storageService.read('test');
     }
+
+    public user: LocalUser = UserService._user;
 
     public addCategory(): void {
         this.dialog.open(NewCategoryComponent)

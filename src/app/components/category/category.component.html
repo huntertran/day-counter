@@ -1,7 +1,10 @@
 <div class="category-card">
     <div class="card-header">
         <h1>{{ category.Title }}</h1>
-        <button class="share-button" mat-raised-button extended color="primary">
+        <button class="share-button"
+                mat-raised-button
+                extended
+                color="primary">
             <mat-icon>ios_share</mat-icon>
             Share
         </button>
@@ -15,9 +18,12 @@
 
     @for (story of category.Stories; track story.Id)
     {
-        <app-story></app-story>
+    <app-story></app-story>
     }
 
-    <button class="add-story-button" mat-raised-button color="primary">Add Story</button>
+    <button class="add-story-button"
+            mat-raised-button
+            color="primary"
+            (click)="addStory()">Add Story</button>
 
 </div>
